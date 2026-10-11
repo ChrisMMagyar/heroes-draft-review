@@ -51,4 +51,4 @@ function timingSafeEqual(a: string, b: string): boolean {
   return out === 0
 }
 
-export const config: Config = { path: "/telegram-gateway" }
+export const config: Config = { path: "/telegram-gateway" } 
