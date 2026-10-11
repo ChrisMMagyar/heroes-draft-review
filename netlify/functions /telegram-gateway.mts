@@ -1,5 +1,5 @@
 import type { Config, Context } from "@netlify/functions"
-
+ 
 export default async (req: Request, context: Context) => {
   const secret = req.headers.get("x-telegram-bot-api-secret-token")
   const expected = Netlify.env.get("TELEGRAM_WEBHOOK_SECRET")
