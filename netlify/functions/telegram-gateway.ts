@@ -14,7 +14,7 @@ export default async (req: Request, context: Context) => {
   const username = msg.from?.username
   const text = msg.text ?? ""
 
-  const roster = JSON.parse(Netlify.env.get("ROSTER_JSON") ??")
+  const roster = JSON.parse(Netlify.env.get("ROSTER_JSON") ?? "{}")
   const person = roster.find((p: any) => p.username === username)
   if (!person?.authorized) {
     await sendMessage(msg.chat.id, "Sorry, you're not on the authorized list.")
