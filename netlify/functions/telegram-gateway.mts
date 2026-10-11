@@ -8,7 +8,7 @@ export default async (req: Request, context: Context) => {
   }
 
   const update = await req.json()
-  const msg = update.message ?? update.edited_message
+  const msg = update.message ?? update.edited_message ?? update.business_message?.message
   if (!msg) return new Response("ok")
 
   const username = msg.from?.username
